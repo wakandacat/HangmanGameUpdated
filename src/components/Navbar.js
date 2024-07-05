@@ -1,4 +1,4 @@
-import '../styles/Navbar.module.css'
+import '../styles/Navbar.css'
 import Button from './Button';
 import React, { useContext } from 'react';
 import GlobalContext from './GlobalContext';
@@ -34,7 +34,7 @@ function Navbar() {
     };
 
     return (
-        <div>
+        <div id='nav'>
             <Button onClick={generateNew} label="Generate" />
             <h2>HANGMAN</h2>
             <Button onClick={giveUp} label="Give Up" />

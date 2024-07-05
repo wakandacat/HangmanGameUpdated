@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import ToGuess from './components/ToGuess';
+import Alphabet from './components/Alphabet';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <ToGuess/>
+      <Alphabet/>
     </div>
   );
 }

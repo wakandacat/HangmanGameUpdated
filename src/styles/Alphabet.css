@@ -1,0 +1,11 @@
+#alpha {
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p {
+    font-size: 2em;
+    padding: 2%;
+}

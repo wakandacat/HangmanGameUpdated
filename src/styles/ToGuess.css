@@ -1,0 +1,13 @@
+#guessingContainer {
+    background-color: honeydew;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+a {
+    font-size: 4em;
+    letter-spacing: 0.5em;
+    text-decoration: none;
+    word-wrap: break-word;
+}

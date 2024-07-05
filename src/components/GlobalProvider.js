@@ -4,7 +4,8 @@ import GlobalContext from './GlobalContext';
 const GlobalProvider = ({ children }) => {
     const [globalState, setGlobalState] = useState({
       title: "Rhubarb",
-      wikiLink: "https://en.wikipedia.org/wiki/Rhubarb"
+      wikiLink: "https://en.wikipedia.org/wiki/Rhubarb",
+      guessedLetters: "",
     });
   
     return (
