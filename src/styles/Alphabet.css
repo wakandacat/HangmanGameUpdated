@@ -9,3 +9,11 @@ p {
     font-size: 2em;
     padding: 2%;
 }
+
+.guessedCorrect {
+    background-color: greenyellow;
+}
+
+.guessedIncorrect {
+    background-color: orangered;
+}

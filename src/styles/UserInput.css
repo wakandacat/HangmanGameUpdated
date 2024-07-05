@@ -1,0 +1,9 @@
+#guess {
+    background-color: black;
+    color: white;
+    border: red;
+    font-size: 4em;
+    width: 75px;
+    text-align: center;
+    outline: none;
+}

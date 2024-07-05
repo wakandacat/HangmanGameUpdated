@@ -2,6 +2,7 @@ import '../styles/Navbar.css'
 import Button from './Button';
 import React, { useContext } from 'react';
 import GlobalContext from './GlobalContext';
+import '../styles/Button.css';
 
 function Navbar() {
     //grab the global variables to update them
@@ -26,7 +27,7 @@ function Navbar() {
     async function generateNew() {
          
         let titleToGuess = await getRandomWikipediaTitle();
-        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`});   
+        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: ''});   
     };
 
     const giveUp = () => {
@@ -35,9 +36,9 @@ function Navbar() {
 
     return (
         <div id='nav'>
-            <Button onClick={generateNew} label="Generate" />
+            <Button onClick={generateNew} label="GENERATE" />
             <h2>HANGMAN</h2>
-            <Button onClick={giveUp} label="Give Up" />
+            <Button onClick={giveUp} label="GIVE UP" />
         </div>
     );
 }
