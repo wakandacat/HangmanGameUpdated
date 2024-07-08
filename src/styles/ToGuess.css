@@ -11,3 +11,9 @@ a {
     text-decoration: none;
     word-wrap: break-word;
 }
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+    color: black;
+}

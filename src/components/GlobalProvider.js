@@ -6,6 +6,7 @@ const GlobalProvider = ({ children }) => {
       title: "Rhubarb",
       wikiLink: "https://en.wikipedia.org/wiki/Rhubarb",
       guessedLetters: "",
+      gameWin: false,
     });
   
     return (

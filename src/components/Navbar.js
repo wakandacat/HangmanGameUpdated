@@ -6,7 +6,7 @@ import '../styles/Button.css';
 
 function Navbar() {
     //grab the global variables to update them
-    const { setGlobalState } = useContext(GlobalContext);
+    const { globalState, setGlobalState } = useContext(GlobalContext);
 
     //get a new wikipedia page from the wikipedia api
     async function getRandomWikipediaTitle() {
@@ -27,11 +27,11 @@ function Navbar() {
     async function generateNew() {
          
         let titleToGuess = await getRandomWikipediaTitle();
-        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: ''});   
+        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: '', gameWin: false});   
     };
 
     const giveUp = () => {
-        console.log('give up');
+        setGlobalState({...globalState, guessedLetters: 'abcdefghijklmnopqrstuvwxyz'});   
     };
 
     return (

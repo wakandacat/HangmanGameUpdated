@@ -25,14 +25,11 @@ function UserInput() {
             //send valid guesses to the global guessing string
             setGlobalState({
                 ...globalState,
-                guessedLetters: globalState.guessedLetters + inputValue           
+                guessedLetters: globalState.guessedLetters + inputValue         
             });
-            console.log("valid");
         } else {
             console.log("not valid");
         }
-
-
 
         //clear the input field
         setInputValue('');
