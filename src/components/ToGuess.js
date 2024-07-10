@@ -12,6 +12,11 @@ const ToGuess = () => {
 
     //runs on the first render and whenever a new guess is made
     useEffect(() => {
+
+        if (!globalState.title) {
+            return; // Exit early if the title is not yet set
+        }
+
         //build a string to send to updateTitleString as the new titleString
         let newTitleString = "";
 
@@ -29,18 +34,18 @@ const ToGuess = () => {
         //check if the title to guess is complete or not
         if(!newTitleString.includes("_")){
             console.log("WINNER WINNER CHICKEN DINNER");
-            setGlobalState({
-                ...globalState,
-                gameWin: true         
-            });
+            setGlobalState(prevState => ({
+                ...prevState,
+                gameWin: true,         
+            }));
         }
 
         updateTitleString(newTitleString);
-    }, [globalState.guessedLetters]);
+    }, [globalState.guessedLetters, globalState.title]);
 
     return (
         <div id='guessingContainer'>
-            <a href={globalState.wikiLink} 
+            <a href={globalState.wikiLink}
                 target="_blank" 
                 className={globalState.gameWin ? '' : 'inactiveLink'}>
                 {titleString}

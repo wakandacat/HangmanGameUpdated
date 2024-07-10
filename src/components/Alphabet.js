@@ -1,29 +1,44 @@
 import GlobalContext from './GlobalContext';
 import React, { useContext } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import '../styles/Alphabet.css'
 
 function Alphabet() {
 
     //grab the global variables to update them
-    const { globalState } = useContext(GlobalContext);
+    const { globalState, setGlobalState } = useContext(GlobalContext);
 
-    const alphabetList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const collectionOfLetters = [];
+    const alphabetList = "abcdefghijklmnopqrstuvwxyz";
+    const [collectionOfLetters, updateCollectionOfLetters] = useState([]);
 
-    for(let x=0;x < alphabetList.length;x++){
-        collectionOfLetters.push(<p value={alphabetList[x]} key={alphabetList[x].toString()}>{alphabetList[x]}</p>);
-    }
+    useEffect(() => {
+
+        let tempCollection = [];
+ 
+        for(let x=0;x < alphabetList.length;x++){
+
+            const letterIsNotGuessed = !globalState.guessedLetters.toLowerCase().includes(alphabetList[x]);
+
+            //check if the guess is correct or incorrect
+            const letterIsGuessed = globalState.guessedLetters.includes(alphabetList[x]) && globalState.title.toLowerCase().includes(alphabetList[x]);
+
+            tempCollection.push(
+                <p 
+                    value={alphabetList[x]} 
+                    key={alphabetList[x].toString()}
+                    className={letterIsNotGuessed ? '' : (letterIsGuessed) ? 'guessedCorrect' : 'guessedIncorrect'}>
+                    {alphabetList[x].toUpperCase()}
+                </p>
+            );
+        }
+
+        updateCollectionOfLetters(tempCollection);
+
+    }, [globalState.guessedLetters]);
+
 
     return <div id='alpha'>{collectionOfLetters}</div>
 }
-
-/* 
-        if(globalState.guessedLetters.includes(alphabetList[x]) && globalState.title.includes(alphabetList[x])){
-            collectionOfLetters.push(<p className='guessedCorrect' value={alphabetList[x]} key={alphabetList[x].toString()}>{alphabetList[x]}</p>);
-        } else if(globalState.guessedLetters.includes(alphabetList[x]) && !globalState.title.includes(alphabetList[x])) {
-            collectionOfLetters.push(<p className='guessedIncorrect' value={alphabetList[x]} key={alphabetList[x].toString()}>{alphabetList[x]}</p>);
-        } else {
-        }
-*/
 
 export default Alphabet;

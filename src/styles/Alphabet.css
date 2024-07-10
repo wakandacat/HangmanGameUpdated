@@ -11,9 +11,11 @@ p {
 }
 
 .guessedCorrect {
-    background-color: greenyellow;
+    color: greenyellow;
+    background-color: green;
 }
 
 .guessedIncorrect {
-    background-color: orangered;
+    background-color: red;
+    color: orangered;
 }

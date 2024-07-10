@@ -3,10 +3,12 @@ import GlobalContext from './GlobalContext';
 
 const GlobalProvider = ({ children }) => {
     const [globalState, setGlobalState] = useState({
-      title: "Rhubarb",
-      wikiLink: "https://en.wikipedia.org/wiki/Rhubarb",
+      title: "",
+      wikiLink: "",
       guessedLetters: "",
       gameWin: false,
+      maxWrongGuess: 10,
+      currWrongGuess: 0,
     });
   
     return (

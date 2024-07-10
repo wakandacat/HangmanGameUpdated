@@ -1,6 +1,7 @@
 import GlobalContext from './GlobalContext';
 import React, { useContext } from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import Button from './Button';
 import '../styles/UserInput.css';
 
@@ -22,11 +23,17 @@ function UserInput() {
 
         //check for valid entries
         if((/[a-zA-Z]/).test(inputValue) && !globalState.guessedLetters.includes(inputValue.toLowerCase()) && !globalState.guessedLetters.includes(inputValue.toUpperCase())){
+            
+            const isCorrectGuess = globalState.title.toLowerCase().includes(inputValue.toLowerCase());
+
             //send valid guesses to the global guessing string
-            setGlobalState({
-                ...globalState,
-                guessedLetters: globalState.guessedLetters + inputValue         
-            });
+            //increment the wrong guesses
+            setGlobalState(prevState => ({
+                ...prevState,
+                guessedLetters: prevState.guessedLetters + inputValue.toLowerCase(),
+                currWrongGuess: isCorrectGuess && prevState.maxWrongGuess !== -1 ? prevState.currWrongGuess : prevState.currWrongGuess + 1         
+            }));
+
         } else {
             console.log("not valid");
         }
@@ -36,11 +43,21 @@ function UserInput() {
     }
 
     // Execute the onclick on ENTER as well
-     const enterPressed = (event) => {
+    const enterPressed = (event) => {
         if (event.key === "Enter") {
             guessLetter();
         }
     }
+
+    //if we hit max wrong guesses, end the game
+    useEffect(() => {
+
+        if(globalState.currWrongGuess >= globalState.maxWrongGuess){
+            console.log("lose");
+        }
+
+    }, [globalState.currWrongGuess]);
+
 
     //the html of the input field and button to get user input
     return (
