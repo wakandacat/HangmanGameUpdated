@@ -1,8 +1,8 @@
 #guessingContainer {
-    background-color: honeydew;
-    width: 90%;
+    width: 80%;
     padding-left: 5%;
     padding-right: 5%;
+    margin: auto;
 }
 
 a {

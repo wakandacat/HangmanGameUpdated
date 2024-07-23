@@ -31,11 +31,14 @@ function UserInput() {
             setGlobalState(prevState => ({
                 ...prevState,
                 guessedLetters: prevState.guessedLetters + inputValue.toLowerCase(),
-                currWrongGuess: isCorrectGuess && prevState.maxWrongGuess !== -1 ? prevState.currWrongGuess : prevState.currWrongGuess + 1         
+                currWrongGuess: isCorrectGuess ? prevState.currWrongGuess : prevState.currWrongGuess + 1         
             }));
 
         } else {
-            console.log("not valid");
+            setGlobalState(prevState => ({
+                ...prevState,
+                textWarning: "TRY ENTERING A VALID LETTER (A-Z) THAT HAS NOT ALREADY BEEN GUESSED"       
+            }));
         }
 
         //clear the input field
@@ -52,8 +55,12 @@ function UserInput() {
     //if we hit max wrong guesses, end the game
     useEffect(() => {
 
-        if(globalState.currWrongGuess >= globalState.maxWrongGuess){
-            console.log("lose");
+        if(globalState.currWrongGuess >= globalState.maxWrongGuess && globalState.maxWrongGuess !== -1){
+            setGlobalState(prevState => ({
+                ...prevState,
+                guessedLetters: 'abcdefghijklmnopqrstuvwxyz',
+                textWarning: "GAME OVER"       
+            }));
         }
 
     }, [globalState.currWrongGuess]);
@@ -72,6 +79,7 @@ function UserInput() {
                 onChange={handleInputChange}
                 onKeyDown={enterPressed}
                 autoComplete="off"
+                style={globalState.gameWin ? {pointerEvents: "none"} : {}}
                 />
             <Button id='guessButton' onClick={guessLetter} label="GUESS"/>
         </div>

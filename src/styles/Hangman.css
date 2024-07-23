@@ -1,0 +1,16 @@
+#stateContainer{
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-width: 70%;
+    height: auto;
+}
+
+#hangmanConditions {
+    font-size: 1.5em;
+    padding: 10px;
+}

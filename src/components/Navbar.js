@@ -30,17 +30,24 @@ function Navbar() {
 
         //get the title and wikiLink
         let titleToGuess = await getRandomWikipediaTitle();
-        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: '', gameWin: false, maxWrongGuess: maxWrongGuess, currWrongGuess: 0});   
+        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: '', gameWin: false, maxWrongGuess: maxWrongGuess, currWrongGuess: 0, textWarning: ""});   
+        
+        document.querySelector("#guess").focus();
     };
 
     const giveUp = () => {
-        setGlobalState({...globalState, guessedLetters: 'abcdefghijklmnopqrstuvwxyz'});
+        setGlobalState(prevState => ({
+            ...prevState,
+            guessedLetters: 'abcdefghijklmnopqrstuvwxyz',
+            textWarning: "GAME OVER"       
+        }));
     };
 
     //get difficulty setting from dropdown
     function difficultySetting() {
 
         var dropdownVal = document.querySelector("#difficulty").value;
+        document.querySelector("#guess").focus();
 
         if(dropdownVal === "easy"){
             return 10;

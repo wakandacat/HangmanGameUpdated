@@ -9,6 +9,7 @@ const GlobalProvider = ({ children }) => {
       gameWin: false,
       maxWrongGuess: 10,
       currWrongGuess: 0,
+      textWarning: ""
     });
   
     return (

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import GlobalContext from './GlobalContext';
-import '../styles/ToGuess.css'
+import '../styles/ToGuess.css';
 import { useEffect } from 'react';
 
 const ToGuess = () => {
@@ -33,11 +33,12 @@ const ToGuess = () => {
 
         //check if the title to guess is complete or not
         if(!newTitleString.includes("_")){
-            console.log("WINNER WINNER CHICKEN DINNER");
             setGlobalState(prevState => ({
                 ...prevState,
                 gameWin: true,         
             }));
+
+            document.querySelector("#guess").blur();
         }
 
         updateTitleString(newTitleString);

@@ -1,5 +1,7 @@
 import GlobalContext from './GlobalContext';
 import React, { useContext } from 'react';
+import hangImage from '../assets/HangmanCard.png';
+import '../styles/Hangman.css';
 
 function Hangman() {
 
@@ -7,8 +9,11 @@ function Hangman() {
     const { globalState, setGlobalState } = useContext(GlobalContext);
 
     return (
-        <div id='hangmanConditions'> 
-            {globalState.maxWrongGuess !== -1 ? "INCORRECT GUESSES: " + globalState.currWrongGuess + "/" + globalState.maxWrongGuess : "INCORRECT GUESSES: " + globalState.currWrongGuess}
+        <div id='stateContainer'>
+            <img src={hangImage} />
+            <div id='hangmanConditions'> 
+                {globalState.maxWrongGuess !== -1 ? "INCORRECT GUESSES: " + globalState.currWrongGuess + "/" + globalState.maxWrongGuess : "INCORRECT GUESSES: " + globalState.currWrongGuess}
+            </div>
         </div>
     );
 }
