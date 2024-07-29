@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Button = ({ onClick, label }) => {
+const Button = ({ id, onClick, label }) => {
 
     //ensure buttons in navbar are not selected by accident when hitting ENTER
     useEffect(() => {
@@ -32,7 +32,7 @@ const Button = ({ onClick, label }) => {
       }, []);
 
 
-    return <button tabIndex="-1" onClick={onClick}>{label}</button>;
+    return <button id={id} tabIndex="-1" onClick={onClick}>{label}</button>;
 };
   
 export default Button;

@@ -5,17 +5,27 @@
     margin: auto;
     background-color:#ee1601;
     padding-top: 3%;
-    padding-bottom: 3%;
-    transform: rotate(-2deg);
-    transform: skew(-7deg);
+    padding-bottom: 5%;
+    z-index: 1000;
 }
 
 a {
-    font-size: 4vw;
+    font-size: 6vh;
     letter-spacing: 0.5em;
     text-decoration: none;
     word-wrap: break-word;
     margin: auto;
+    color: #6de8dd;
+    animation-name: blinking;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+@keyframes blinking {
+    0%   {color: #6de8dd;}
+    50%  {color: black;}
+    100% {color: #6de8dd;}
 }
 
 .inactiveLink {

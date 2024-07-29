@@ -4,18 +4,21 @@ import ToGuess from './components/ToGuess';
 import Alphabet from './components/Alphabet';
 import UserInput from './components/UserInput';
 import Hangman from './components/Hangman';
+import Background from './components/Background';
 
 function App() {
 
   return (
     <div className="App">
-      <Navbar/>
-      <div style={{display: "flex", transform: "rotate(-2deg)"}}>
-        <Hangman/>
+    <Background/>
+    <Navbar/>
+    <Hangman/>
+      <span id='mainBack'>
+        <p id='text'>HANGMAN</p>
         <ToGuess/>
-      </div>
+        <UserInput/>
+      </span>
       <Alphabet/>
-      <UserInput/>
     </div>
   );
 }

@@ -1,16 +1,23 @@
 #guess {
-    background-color: black;
+    background-color: #ee1601;
     color: white;
-    border: red;
     font-size: 4em;
     width: 75px;
     text-align: center;
     outline: none;
+    border: 15px solid white;
+    clip-path: polygon(5% 0, 93% 4%, 97% 97%, 0% 100%);
+}
+
+#guessButton {
+    clip-path: polygon(0 15%, 100% 3%, 97% 95%, 2% 91%);
 }
 
 #userDiv {
     display: flex;
     margin-top: 1%;
-    width: 100%;
+    width: 30%;
+    margin-left: 5%;
+    margin-bottom: 2%;
     justify-content: center;
 }

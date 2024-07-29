@@ -1,12 +1,22 @@
 button {
     background-color: black;
-    border: 5px solid white;
+    border: 15px solid white;
     color: white;
-    padding: 15px 32px;
-    margin: 1%;
     cursor: pointer;
     transition-duration: 0.4s;
     font-weight: 900;
+    width: 80%;
+}
+
+#first {
+    clip-path: polygon(0 0, 100% 9%, 100% 95%, 5% 100%);
+    transform: rotate(3deg);
+}
+
+#second {
+    margin-left: 15%;
+    clip-path: polygon(8% 0, 100% 13%, 100% 84%, 0% 100%);
+    transform: rotate(-1deg);
 }
 
 button:hover {

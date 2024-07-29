@@ -33,6 +33,15 @@ function Navbar() {
         setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: '', gameWin: false, maxWrongGuess: maxWrongGuess, currWrongGuess: 0, textWarning: ""});   
         
         document.querySelector("#guess").focus();
+
+         // Pause the animation
+         let link = document.querySelector("a");
+
+         link.style.animation = 'none'; // Set to 'none' to remove the animation
+         const reflow = link.offsetHeight; // Trigger reflow
+         link.style.animation = ''; // Reapply the original animation
+
+         link.style.animationPlayState = 'paused';
     };
 
     const giveUp = () => {
@@ -65,9 +74,8 @@ function Navbar() {
 
     return (
         <div id='nav'>
-            <Button onClick={generateNew} label="GENERATE" />
-            <h2>HANGMAN</h2>
-            <Button onClick={giveUp} label="GIVE UP" />
+            <Button id='first' onClick={generateNew} label="GENERATE" />
+            <Button id='second' onClick={giveUp} label="GIVE UP" />
             <select name="difficulty" id="difficulty" onChange={generateNew}>
                 <option value="easy">EASY</option>
                 <option value="hard">HARD</option>

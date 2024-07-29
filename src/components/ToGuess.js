@@ -38,6 +38,16 @@ const ToGuess = () => {
                 gameWin: true,         
             }));
 
+            // Play the animation
+            let link = document.querySelector("a");
+
+            link.style.animation = 'none'; // Set to 'none' to remove the animation
+            const reflow = link.offsetHeight; // Trigger reflow
+            link.style.animation = ''; // Reapply the original animation
+
+            link.style.animationPlayState = 'running';
+
+
             document.querySelector("#guess").blur();
         }
 
