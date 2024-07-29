@@ -1,6 +1,6 @@
 #stateContainer{
     display: flex;
-    width: 20%;
+    width: 30%;
     flex-direction: column;
     align-items: center;
 }
@@ -8,9 +8,13 @@
 img {
     max-width: 70%;
     height: auto;
+    background-color: white;
+    border: 15px solid black;
 }
 
 #hangmanConditions {
     font-size: 1.5vw;
     padding: 10px;
+    font-weight: 700;
+    color: #ee1601;
 }

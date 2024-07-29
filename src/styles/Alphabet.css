@@ -1,21 +1,27 @@
 #alpha {
-    background-color: aquamarine;
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border: 10px solid white;
+    width: 70%;
+    margin: auto;
+    transform: rotate(-5deg);
 }
 
 p {
     font-size: 2vw;
     padding: 2%;
+    margin: 0%;
+    font-weight: 900;
 }
 
 .guessedCorrect {
-    color: greenyellow;
-    background-color: green;
+    background-color: #ee1601;
+    color: #6de8dd;
 }
 
 .guessedIncorrect {
-    background-color: red;
-    color: orangered;
+    background-color: #ee1601;
+    color: #232323;
 }

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <div style={{display: "flex"}}>
+      <div style={{display: "flex", transform: "rotate(-2deg)"}}>
         <Hangman/>
         <ToGuess/>
       </div>

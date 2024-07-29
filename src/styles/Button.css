@@ -1,14 +1,15 @@
 button {
-    background-color: green;
-    border: none;
+    background-color: black;
+    border: 5px solid white;
     color: white;
     padding: 15px 32px;
     margin: 1%;
     cursor: pointer;
     transition-duration: 0.4s;
+    font-weight: 900;
 }
 
 button:hover {
-    background-color: darkgreen;
-    color: black;
+    background-color: #ee1601;
+    color: #6de8dd;
 }
