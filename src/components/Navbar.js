@@ -38,8 +38,7 @@ function Navbar() {
     const giveUp = () => {
         setGlobalState(prevState => ({
             ...prevState,
-            guessedLetters: 'abcdefghijklmnopqrstuvwxyz',
-            textWarning: "GAME OVER"       
+            guessedLetters: 'abcdefghijklmnopqrstuvwxyz',   
         }));
     };
 

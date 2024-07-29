@@ -6,10 +6,11 @@
 }
 
 a {
-    font-size: 4em;
+    font-size: 4vw;
     letter-spacing: 0.5em;
     text-decoration: none;
     word-wrap: break-word;
+    margin: auto;
 }
 
 .inactiveLink {

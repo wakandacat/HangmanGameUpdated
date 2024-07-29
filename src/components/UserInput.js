@@ -35,10 +35,7 @@ function UserInput() {
             }));
 
         } else {
-            setGlobalState(prevState => ({
-                ...prevState,
-                textWarning: "TRY ENTERING A VALID LETTER (A-Z) THAT HAS NOT ALREADY BEEN GUESSED"       
-            }));
+            console.log("enter valid letter that has not already been guessed");
         }
 
         //clear the input field
@@ -58,8 +55,7 @@ function UserInput() {
         if(globalState.currWrongGuess >= globalState.maxWrongGuess && globalState.maxWrongGuess !== -1){
             setGlobalState(prevState => ({
                 ...prevState,
-                guessedLetters: 'abcdefghijklmnopqrstuvwxyz',
-                textWarning: "GAME OVER"       
+                guessedLetters: 'abcdefghijklmnopqrstuvwxyz',   
             }));
         }
 

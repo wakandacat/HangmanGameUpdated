@@ -4,7 +4,6 @@ import ToGuess from './components/ToGuess';
 import Alphabet from './components/Alphabet';
 import UserInput from './components/UserInput';
 import Hangman from './components/Hangman';
-import Text from './components/Text';
 
 function App() {
 
@@ -17,7 +16,6 @@ function App() {
       </div>
       <Alphabet/>
       <UserInput/>
-      <Text/>
     </div>
   );
 }
