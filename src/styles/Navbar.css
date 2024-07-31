@@ -6,7 +6,7 @@
     justify-content: center;
     z-index: 1000;
     margin-left:80%;
-    transform: rotate(10deg);
+    transform: rotate(12deg);
     top: 5%;
 }
 
@@ -18,9 +18,11 @@ select {
     transition-duration: 0.4s;
     font-weight: 900;
     width: 70%;
-    margin-left: 7%;
-    clip-path: polygon(0 0, 100% 3%, 100% 72%, 6% 93%);
-    transform: rotate(-5deg);
+    margin-left: 11%;
+    clip-path: polygon(0 0, 100% 3%, 100% 81%, 6% 93%);
+    transform: rotate(-4deg);
+    padding: 15px 32px;
+    text-align: center;
 }
 
 select:hover {

@@ -21,3 +21,13 @@
     margin-bottom: 2%;
     justify-content: center;
 }
+
+.hover-animation {
+    animation: buttonPress 0.2s;
+}
+
+@keyframes buttonPress {
+    0%   {background-color: black; color: white;}
+    50%  {background-color: #ee1601; color: #6de8dd;}
+    100% {background-color: black; color: white;}
+}

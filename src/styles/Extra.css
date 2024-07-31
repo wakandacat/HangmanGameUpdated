@@ -1,0 +1,26 @@
+#clickMe {
+    background-color: black;
+    border: 15px solid white;
+    color: white;
+    padding: 1% 2%;
+    position: absolute;
+    z-index: 2000;
+    display: block;
+    transition-duration: 0.4s;
+    top: 35%;
+    left: 20%;
+    cursor: pointer;
+    transform: rotate(-4deg);
+    clip-path: polygon(0 0, 100% 5%, 97% 93%, 1% 96%);
+}
+
+#clickMe > a {
+    font-size: 1vw;
+    letter-spacing: 0.5em;
+    text-decoration: none;
+}
+
+#clickMe:hover {
+    background-color: #ee1601;
+    color: #6de8dd;
+}

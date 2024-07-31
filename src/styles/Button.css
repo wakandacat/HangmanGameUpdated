@@ -6,6 +6,7 @@ button {
     transition-duration: 0.4s;
     font-weight: 900;
     width: 80%;
+    padding: 15px 32px;
 }
 
 #first {
@@ -16,7 +17,7 @@ button {
 #second {
     margin-left: 15%;
     clip-path: polygon(8% 0, 100% 13%, 100% 84%, 0% 100%);
-    transform: rotate(-1deg);
+    transform: rotate(-4deg);
 }
 
 button:hover {

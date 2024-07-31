@@ -45,10 +45,24 @@ function UserInput() {
     // Execute the onclick on ENTER as well
     const enterPressed = (event) => {
         if (event.key === "Enter") {
+            //imitate button press
+
+           // const button = buttonRef.current;
+            const button = document.querySelector('#guessButton');
+            button.classList.add('hover-animation'); // Add hover animation class
+
             guessLetter();
         }
     }
 
+    //remove the ENTER button animation once finished
+    const donePressed = (event) => {
+        if (event.key === "Enter") {
+            const button = document.querySelector('#guessButton');
+            button.classList.remove('hover-animation'); // Ensure reverse class is removed
+        }
+    }
+   
     //if we hit max wrong guesses, end the game
     useEffect(() => {
 
@@ -74,6 +88,7 @@ function UserInput() {
                 value={inputValue} 
                 onChange={handleInputChange}
                 onKeyDown={enterPressed}
+                onKeyUp={donePressed}
                 autoComplete="off"
                 style={globalState.gameWin ? {pointerEvents: "none"} : {}}
                 />

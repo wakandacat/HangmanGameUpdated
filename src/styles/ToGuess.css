@@ -20,6 +20,7 @@ a {
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-play-state: paused;
+    font-weight: 900;
 }
 
 @keyframes blinking {

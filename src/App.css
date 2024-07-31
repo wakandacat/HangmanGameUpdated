@@ -16,8 +16,11 @@
 #text{
   font-family:'Times New Roman', Times, serif;
   font-size: 12vw;
+  letter-spacing: 0.1em;
   padding-bottom: 1%;
+  padding-left: 0%;
   color: #660904;
   line-height: 70%;
-  transform: skew(3deg) rotate(1deg);
+  transform: skew(3deg) rotate(3deg);
+  text-align: left;
 }
