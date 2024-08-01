@@ -10,22 +10,23 @@
     top: 5%;
 }
 
-select {
-    background-color: black;
-    border: 15px solid white;
-    color: white;
-    cursor: pointer;
-    transition-duration: 0.4s;
-    font-weight: 900;
+#difficulty {
     width: 70%;
     margin-left: 11%;
     clip-path: polygon(0 0, 100% 3%, 100% 81%, 6% 93%);
     transform: rotate(-4deg);
-    padding: 15px 32px;
+    padding: 15px 0px;
     text-align: center;
 }
 
-select:hover {
-    background-color: #ee1601;
-    color: #6de8dd;
+#difficulty > p {
+    clip-path: none;
+    font-size: 1em;
+    display: inline;
+    padding-left: 30px;
+}
+
+#difficulty > p:first-of-type {
+    padding-right: 30px;
+    padding-left: 0px;
 }

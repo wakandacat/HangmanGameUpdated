@@ -3,10 +3,14 @@ import Button from './Button';
 import React, { useContext, useEffect } from 'react';
 import GlobalContext from './GlobalContext';
 import '../styles/Button.css';
+import CycleButton from './CycleButton';
 
 function Navbar() {
     //grab the global variables to update them
     const { globalState, setGlobalState } = useContext(GlobalContext);
+
+    //list options for difficulties
+    const options = ['EASY', 'HARD', 'NONE'];
     
     //get a new wikipedia page from the wikipedia api
     async function getRandomWikipediaTitle() {
@@ -57,9 +61,9 @@ function Navbar() {
         var dropdownVal = document.querySelector("#difficulty").value;
         document.querySelector("#guess").focus();
 
-        if(dropdownVal === "easy"){
+        if(dropdownVal === "EASY"){
             return 10;
-        } else if(dropdownVal === "hard"){
+        } else if(dropdownVal === "HARD"){
             return 5;
         } else {
             return -1;
@@ -76,11 +80,7 @@ function Navbar() {
         <div id='nav'>
             <Button id='first' onClick={generateNew} label="GENERATE" />
             <Button id='second' onClick={giveUp} label="GIVE UP" />
-            <select name="difficulty" id="difficulty" onChange={generateNew}>
-                <option value="easy">EASY</option>
-                <option value="hard">HARD</option>
-                <option value="none">NONE</option>
-            </select>
+            <CycleButton listOptions={options} clickFunction={generateNew}/>
         </div>
     );
 }
