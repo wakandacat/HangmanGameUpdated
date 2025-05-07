@@ -1,26 +1,53 @@
 #guessingContainer {
-    width: 80%;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin: auto;
-    background-color:#ee1601;
-    padding-top: 3%;
+    width: 60%;
+    padding: 2%;
     padding-bottom: 5%;
+    margin-left: 22%;
+    margin-right: 10%;
+    margin-top: 3%;
+    background-color:#ee1601;
     z-index: 1000;
 }
 
 a {
-    font-size: 6vh;
+    font-size: 4vw;
     letter-spacing: 0.5em;
     text-decoration: none;
     word-wrap: break-word;
-    margin: auto;
     color: #6de8dd;
     animation-name: blinking;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-play-state: paused;
     font-weight: 900;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 450px) {
+    #guessingContainer{
+      width: 80%;
+      margin: 0;
+      margin: auto;
+      margin-top: 10%;
+      margin-bottom: 5%;
+    }
+
+    a {
+        font-size: 7vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #guessingContainer{
+      width: 80%;
+      margin: 0;
+      margin: auto;
+      margin-top: 10%;
+      margin-bottom: 5%;
+    }
+
+    a {
+        font-size: 8vw;
+    }
 }
 
 @keyframes blinking {

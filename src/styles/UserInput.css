@@ -1,7 +1,7 @@
 #guess {
     background-color: #ee1601;
     color: white;
-    font-size: 4em;
+    font-size: 4vw;
     width: 75px;
     text-align: center;
     outline: none;
@@ -15,12 +15,26 @@
 
 #userDiv {
     display: flex;
-    margin-top: 1%;
-    width: 30%;
-    margin-left: 5%;
-    margin-bottom: 2%;
+    width: 25%;
+    margin-left: 7%;
     justify-content: center;
+    align-items: baseline;
 }
+
+@media screen and (max-width: 1200px) {
+    
+    #userDiv {
+      display: flex;
+      width: 25%;
+      justify-content: center;
+      margin: 0;
+    }
+
+    #guess {
+        border: 5px solid white;   
+        font-size: 8vw;
+    }
+  }
 
 .hover-animation {
     animation: buttonPress 0.2s;

@@ -1,12 +1,11 @@
 #stateContainer{
     display: flex;
-    width: 30%;
+    width: 22%;
     flex-direction: column;
     align-items: center;
     transform: rotate(-5deg);
-    position: absolute;
-    z-index: 1000;
-    margin-top: 2%;
+    z-index: 1500;
+    margin-top: 3%;
 }
 
 img {
@@ -22,13 +21,44 @@ img {
 
 #hangmanConditions {
     font-size: 1.5vw;
-    padding: 10px;
+    padding: 1%;
     font-weight: 700;
     color: white;
     background-color: black;
     border: 20px solid white;
     transform: rotate(7deg);
     clip-path: polygon(2% 25%, 100% 3%, 95% 91%, 0 91%);
+    width: max-content;
+}
+
+
+@media screen and (max-width: 1200px) and (min-width: 450px) {
+    #stateContainer{
+        width: 40%;
+        margin-top: 0%;
+    }
+    #hangmanConditions{
+        border: 5px solid white;
+        font-size: 3vw;
+    }
+    img {
+        width: 40%;
+        border: 5px solid white;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #stateContainer{
+        width: 50%;
+    }
+    #hangmanConditions{
+        border: 5px solid white;
+        font-size: 4vw;
+    }
+    img {
+        width: 70%;
+        border: 5px solid white;
+    }
 }
 
 @keyframes incorrect {

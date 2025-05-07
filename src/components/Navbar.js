@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from 'react';
 import GlobalContext from './GlobalContext';
 import '../styles/Button.css';
 import CycleButton from './CycleButton';
+import Hangman from './Hangman';
 
 function Navbar() {
     //grab the global variables to update them
@@ -34,18 +35,36 @@ function Navbar() {
 
         //get the title and wikiLink
         let titleToGuess = await getRandomWikipediaTitle();
-        setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: '', gameWin: false, maxWrongGuess: maxWrongGuess, currWrongGuess: 0, textWarning: ""});   
+
+        let testCountGoodLetters = 0;
+        let testCountTotal = 0;
+        //ensure the title includes at least 5 guessable letters
+        for(let i = 0; i < titleToGuess.length; i++){
+            testCountTotal++;
+            if((/[a-zA-Z]/).test(titleToGuess[i])){
+                testCountGoodLetters++;          
+            }
+        }
+
+        if(testCountGoodLetters < 5 || testCountTotal > 30){
+            //console.log("generate new");
+            generateNew();
+        } else {
+            //console.log("good" + testCountGoodLetters + " " + testCountTotal);
+            setGlobalState({title: titleToGuess, wikiLink: `https://en.wikipedia.org/wiki/${encodeURIComponent(titleToGuess)}`, guessedLetters: '', gameWin: false, maxWrongGuess: maxWrongGuess, currWrongGuess: 0, textWarning: ""});   
         
-        document.querySelector("#guess").focus();
+            document.querySelector("#guess").focus();
+    
+             // Pause the animation
+             let link = document.querySelector("a");
+    
+             link.style.animation = 'none'; // Set to 'none' to remove the animation
+             const reflow = link.offsetHeight; // Trigger reflow
+             link.style.animation = ''; // Reapply the original animation
+    
+             link.style.animationPlayState = 'paused';
+        }
 
-         // Pause the animation
-         let link = document.querySelector("a");
-
-         link.style.animation = 'none'; // Set to 'none' to remove the animation
-         const reflow = link.offsetHeight; // Trigger reflow
-         link.style.animation = ''; // Reapply the original animation
-
-         link.style.animationPlayState = 'paused';
     };
 
     const giveUp = () => {
@@ -77,11 +96,14 @@ function Navbar() {
     }, []);
 
     return (
-        <div id='nav'>
-            <Button id='first' onClick={generateNew} label="GENERATE" />
-            <Button id='second' onClick={giveUp} label="GIVE UP" />
-            <CycleButton listOptions={options} clickFunction={generateNew}/>
-        </div>
+        <div id='navHang'>
+            <Hangman/>
+            <div id='nav'>
+                <Button id='first' onClick={generateNew} label="NEW" />
+                <Button id='second' onClick={giveUp} label="GIVE UP" />
+                <CycleButton listOptions={options} clickFunction={generateNew}/>
+            </div>
+        </div>   
     );
 }
   

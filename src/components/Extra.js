@@ -13,7 +13,7 @@ function Extra() {
     useEffect(() => {
        
         if(globalState.gameWin === true){
-            console.log("yippee");
+            //console.log("yippee");
             document.querySelector('#clickMe').style.display = "block";
         } else {
             document.querySelector('#clickMe').style.display = "none";

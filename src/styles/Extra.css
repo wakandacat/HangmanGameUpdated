@@ -15,9 +15,19 @@
 }
 
 #clickMe > a {
-    font-size: 1vw;
+    font-size: 2vw;
     letter-spacing: 0.5em;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+    #clickMe{
+        border: 5px solid white;
+    }
+
+    #clickMe > a  {
+        font-size: 4vw;
+    }
 }
 
 #clickMe:hover {

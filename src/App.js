@@ -11,15 +11,17 @@ function App() {
 
   return (
     <div className="App">
-      <Background/>
       <Navbar/>
-      <Hangman/>
+      <div id='visualBack'>
+      </div>
       <span id='mainBack'>
         <p id='text'>HANGMAN</p>
         <ToGuess/>
+        <span id='userFlexBox'>
         <UserInput/>
-      </span>
-      <Alphabet/>
+        <Alphabet/>
+        </span>
+      </span> 
       <Extra/>
     </div>
   );
