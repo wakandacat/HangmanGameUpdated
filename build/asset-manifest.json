@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.79f1f6eb.css",
+    "main.js": "/static/js/main.b6808b74.js",
+    "static/js/453.7df2989d.chunk.js": "/static/js/453.7df2989d.chunk.js",
+    "static/media/HangmanCard.png": "/static/media/HangmanCard.f2910c13927866e8da5e.png",
+    "index.html": "/index.html",
+    "main.79f1f6eb.css.map": "/static/css/main.79f1f6eb.css.map",
+    "main.b6808b74.js.map": "/static/js/main.b6808b74.js.map",
+    "453.7df2989d.chunk.js.map": "/static/js/453.7df2989d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79f1f6eb.css",
+    "static/js/main.b6808b74.js"
+  ]
+}
